@@ -16,12 +16,17 @@ header{
     top: 0;
     border-bottom:2px solid #ccc;
     background-color: white;
+    overflow: auto;
 }
 
 @media screen and (min-width:1244px){
 .navbar{
     display: flex;
     align-items: center;
+    overflow: auto;
+}
+.navbar2{
+    display: none;
 }
 
 .left-nav{
@@ -224,17 +229,20 @@ a{
     .navbar2{
         display: flex;
         align-items: center;
+        overflow: auto;
     }
     
     .left-nav{
         display: flex;
         order: 1;
-        width: 60%;
+        width: 40%;
+        overflow: auto;
     }
     .right-nav{
         display: flex;
+        overflow: auto;
         order: 2;
-        width: 40%;
+        width: 60%;
     }
     .nav-item{
         display: flex;
@@ -243,6 +251,7 @@ a{
         height: 0.6em;
         /* margin: auto; */
         align-items: center;
+        overflow: auto;
     }
     
     .nav-item a{
@@ -271,7 +280,7 @@ a{
         position: absolute;
         top: 75px;
         width: 16em;
-        height: 50vh;
+        height: 80vh;
         border: 2px solid white;
         background-color:white;
         box-sizing: border-box;
@@ -309,6 +318,7 @@ a{
     
     .search{
         display: flex;
+        overflow:auto;
         width: 25em;
         border: 1px solid black;
         padding: 0.2em;
@@ -352,6 +362,13 @@ a{
         width: 90%;
         /* aspect-ratio: 3/4; */
     }
+
+    .signin-left{
+        order: 2;
+    }
+    .signin-right{
+        order: 1;
+    }
     
     .signin-left,.signin-right{
         display: inline-block;
@@ -388,7 +405,7 @@ a{
         /* border-radius: 1.2em; */
         border: 1px solid;
         padding: 1em;
-        width: 20em;
+        width: 15em;
         outline: none;
         margin: auto;
     }

@@ -24,6 +24,9 @@ header{
     display: flex;
     align-items: center;
 }
+.navbar2{
+    display: none;
+}
 
 .left-nav{
     display: flex;
@@ -166,17 +169,20 @@ a{
     .navbar2{
         display: flex;
         align-items: center;
+        overflow: auto;
     }
     
     .left-nav{
         display: flex;
         order: 1;
-        width: 60%;
+        width: 40%;
+        overflow: auto;
     }
     .right-nav{
         display: flex;
         order: 2;
-        width: 40%;
+        width: 60%;
+        overflow: auto;
     }
     .nav-item{
         display: flex;
@@ -185,6 +191,7 @@ a{
         height: 0.6em;
         /* margin: auto; */
         align-items: center;
+        overflow: auto;
     }
     
     .nav-item a{
@@ -213,7 +220,7 @@ a{
         position: absolute;
         top: 75px;
         width: 16em;
-        height: 50vh;
+        height: 80vh;
         border: 2px solid white;
         background-color:white;
         box-sizing: border-box;
@@ -255,6 +262,7 @@ a{
         padding: 0.2em;
         margin-left: 2em;
         align-items: center;
+        overflow: auto;
     }
     
     #search-bar{
@@ -277,9 +285,10 @@ a{
     
     
     .pic{
-        width: 200px;
+        width: 5em;
         /* height: 200px; */
         border-radius: 50%;
+        overflow: auto;
     }
     
     .about-section{
@@ -303,6 +312,7 @@ a{
         width: 50%;
         margin: auto;
         margin-bottom: 1.5em;
+        overflow: auto;
     }
     
     

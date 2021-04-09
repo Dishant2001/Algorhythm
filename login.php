@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
     <?php
-    include 'login.css'
+    include 'login.css';
     ?>
     </style>
 </head>
@@ -78,7 +78,7 @@
     <div class="signin-window" id="signin-window">
         <div class="signin-left">
           <div class="signin-items">
-            <img class="logo-2" src="logo.png" alt="Logo Here" id="logo">
+            <img class="logo-2" src="" alt="Logo Here" id="logo">
           </div>
           <form action="" method="post">
             <div class="signin-items">

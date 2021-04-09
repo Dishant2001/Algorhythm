@@ -1,7 +1,6 @@
 function expand(){
-    b=document.getElementById('dropdown');
-    if(b.style.display=='none')
-      b.style.display='flex';
+    if(document.getElementById('dropdown').style.display=='none')
+    document.getElementById('dropdown').style.display='flex';
     else
-      b.style.display='none';
+    document.getElementById('dropdown').style.display='none';
 }
