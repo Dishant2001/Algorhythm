@@ -1,9 +1,19 @@
+<?php
+session_start();
+$logged=false;
+if(isset($_SESSION['User'])){
+  $logged=true;
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Care</title>
+    <title>Contact Us</title>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -32,8 +42,8 @@
     <header>
         <nav class="navbar">
         <div class="left-nav">
-          <div class="nav-item">
-              <a href="index.php"><img src="" alt="Logo"></a>
+          <div class="nav-item logo-cont">
+              <a href="index.php"><img class="logo" src="assets/logo.png" alt="Logo"></a>
           </div>
           <div class="nav-item search-item">
             <div class="search">
@@ -48,8 +58,24 @@
           <div class="nav-item"><a href="index.php">Home</a></div>
           <div class="nav-item"><a href="#">Features</a></div>
           <div class="nav-item"><a href="#">How it works?</a></div>
+            <?php
+            if($logged==TRUE)
+            {
+            ?>
+          <div class="nav-item">
+            <a href="account.php">My Account</a>
+          </div>
+          <div class="nav-item">
+            <a href="logout.php">Logout</a>
+          </div>
+          <?php 
+          }
+          else
+          {
+          ?>
           <div class="nav-item"><a href="login.php">Login</a></div>
           <div class="nav-item"><a href="signup.php">Sign Up</a></div>
+          <?php }?>
         </div>
         </nav>
         <nav class="navbar2">
@@ -118,30 +144,28 @@
           </div>
         </form>
         <footer>
-          <div class="footer">
-            <div class="foot-items">
-              <h2>Customer Care</h2>
-              <ul>
-                <li><a href="contact.php">Contact Us</a></li>
-                <li><a href="#">Shipping</a></li>
-                <li><a href="#">Policies</a></li>
-              </ul>
+            <div class="footer" style="height:80px">
+              <div class="foot-items">
+                <h2>Customer Care</h2>
+                <ul style="list-style:none">
+                  <li><a href="contact.php">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="foot-items">
+                <h2>About Us</h2>
+                <div class="about"><a href="about.php" style="color: blue;">Check here</a></div>
+              </div>
+              <div class="foot-items">
+                <h2>Connect With Us</h2>
+                <a class="active" href="#"><i class="fa fa-home"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-github"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+              </div>
             </div>
-            <div class="foot-items">
-              <h2>About Us</h2>
-              <div class="about"><a href="about.php" style="color: blue;">Check here</a></div>
-            </div>
-            <div class="foot-items">
-              <h2>Connect With Us</h2>
-              <a class="active" href="#"><i class="fa fa-home"></i></a>
-              <a href="#"><i class="fa fa-twitter"></i></a>
-              <a href="#"><i class="fa fa-facebook"></i></a>
-              <a href="#"><i class="fa fa-instagram"></i></a>
-              <a href="#"><i class="fa fa-github"></i></a>
-              <a href="#"><i class="fa fa-linkedin"></i></a>
-            </div>
-          </div>
-        </footer>
+          </footer>
 </body>
 <script>
   <?php

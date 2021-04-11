@@ -4,6 +4,7 @@
     /* font-family: 'Ubuntu Mono', monospace; */
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
+    font-weight: bold;
 }
 
 h1{
@@ -14,14 +15,18 @@ h1{
 header{
     position: sticky;
     top: 0;
-    border-bottom:2px solid #ccc;
     background-color: white;
+}
+
+body{
+    background-color: black;
 }
 
 @media screen and (min-width:1244px){
 .navbar{
     display: flex;
     align-items: center;
+    background-color: #5ce1e6;
 }
 .navbar2{
     display: none;
@@ -30,12 +35,14 @@ header{
 .left-nav{
     display: flex;
     order: 1;
-    width: 60%;
+    width: 59%;
+    background-color: #5ce1e6;
 }
 .right-nav{
     display: flex;
     order: 2;
-    width: 40%;
+    width: 41%;
+    background-color: #5ce1e6;
 }
 
 .nav-item{
@@ -45,39 +52,43 @@ header{
     height: 0.6em;
     /* margin: auto; */
     align-items: center;
+    background-color: #5ce1e6;
+    color: black;
 }
 
 .nav-item a{
     text-align: center;
     margin: auto;
+    color: black;
 }
 
-.nav-item a:hover{
-    background-color: darksalmon;
-    cursor: pointer;
-}
-
-.nav-item:hover{
-    background-color: darksalmon;
-    cursor: pointer;
-}
 
 a{
     text-decoration: none;
     color: black;
 }
 
-.search-item:hover{
-    background-color: white;
+
+.logo-2{
+    margin: auto;
+    width: 10em;
+}
+.logo{
+    margin: auto;
+    width: 4.5em;
+}
+.logo-cont{
+    padding: 0em;
 }
 
 .search{
     display: flex;
     width: 25em;
-    border: 1px solid black;
+    border: 1px solid #5ce1e6;
     padding: 0.2em;
     margin-left: 2em;
     align-items: center;
+    background-color: white;
 }
 
 #search-bar{
@@ -86,6 +97,8 @@ a{
     outline: none;
     padding: 0.5em;
     /* margin: auto; */
+    background-color: white;
+    color: black;
 }
 
 
@@ -111,6 +124,7 @@ a{
     padding: 1em;
     border-radius: 0.2em;
     outline: none;
+    width: 10em;
     background-color: aquamarine;
     cursor: pointer;
     margin: auto;
@@ -220,20 +234,22 @@ a{
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    height: 200px;
+    height: 150px;
     /* background-color: darkkhaki; */
     /* background-color: cadetblue; */
-    background-color: #99ccff;
+    background-color: #5ce1e6;
 }
 .foot-items{
     margin: 20px auto;
     width: 400px;
+    color: black;
 }
 .foot-items h2{
     color:black;
     text-align: left;
     border-bottom: 1px solid;
     padding: 2px;
+    color: black;
 }
 .foot-items ul{
     display: block;

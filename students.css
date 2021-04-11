@@ -7,6 +7,7 @@
     font-weight: bold;
 }
 
+
 h1{
     font-size: 2em;
     margin-bottom: 0.5em;
@@ -15,12 +16,11 @@ h1{
 header{
     position: sticky;
     top: 0;
-    
-    background-color: white;
-    overflow: auto;
+    /* border-bottom:2px solid #ccc; */
+    background-color:#5ce1e6;
 }
 
-body{
+body {
     background-color: black;
 }
 
@@ -28,9 +28,9 @@ body{
 .navbar{
     display: flex;
     align-items: center;
-    overflow: auto;
-    background-color: #5ce1e6;
+    background-color:#5ce1e6;
 }
+
 .navbar2{
     display: none;
 }
@@ -38,16 +38,13 @@ body{
 .left-nav{
     display: flex;
     order: 1;
-    width: 59%;
-    background-color: #5ce1e6;
+    width: 58%;
 }
 .right-nav{
     display: flex;
     order: 2;
-    width: 41%;
-    background-color: #5ce1e6;
+    width: 42%;
 }
-
 .nav-item{
     display: flex;
     padding: 2em;
@@ -55,24 +52,71 @@ body{
     height: 0.6em;
     /* margin: auto; */
     align-items: center;
-    color: black;
-    background-color: #5ce1e6;
+    color:black;
 }
 
 .nav-item a{
     text-align: center;
+    color:black;
     margin: auto;
-    color: black;
 }
 
+.info-cont{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    color: white;
+    border-bottom: 1px solid #e9163f;
+    border-top: 1px solid #e9163f;
+    margin: auto;
+}
+
+.info-left{
+    display: flex;
+    width: 40%;
+    color: white;
+    margin: auto;
+    align-items: center;
+    height: 220px;
+    border-right: 2px solid #e9163f;
+}
+.info-right{
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    margin: auto;
+    color: white;
+}
+.info-right-item{
+    padding: 1em;
+    display: flex;
+    margin: auto;
+    color: white;
+}
+
+#view,#apply{
+    background-color: #e9163f;
+    display: inline;
+    color: white;
+    width: 10em;
+    padding: 1em;
+    margin: 0.5em;
+    border-radius: 0.2em;
+}
+
+/* .nav-item a:hover{
+    background-color: darksalmon;
+    cursor: pointer;
+} */
+
+/* .nav-item:hover{
+    background-color: darksalmon;
+    cursor: pointer;
+} */
 
 a{
     text-decoration: none;
-    color: black;
-}
-
-.quote{
-    font-family: 'Lobster', cursive;
+    color:black;
 }
 
 
@@ -89,101 +133,47 @@ a{
 #search-bar{
     width: 21em;
     border: none;
-
     outline: none;
     padding: 0.5em;
-    color: black;
     background-color: white;
+    color:black;
     /* margin: auto; */
 }
 
 
 .search-btn{
     padding: 0.5em;
-    background-color: white;
+    background-color:white;
     border: none;
     outline: none;
     cursor: pointer;
 }
 
-
-
-.signin-window{
+.buttons{
+    margin-top: 1em;
+    margin-bottom: 2em;
     display: flex;
-    flex-wrap: wrap;
-    overflow: auto;
     flex-direction: row;
-    justify-content: center;
-    margin-top: 15vmin;
-    margin-left: auto;
-    margin-right: auto;
-    /* background-color: #dbca69; */
-    /* box-shadow: 0 0 1em black; */
-    /* border-radius: 7em; */
-    /* border-color: honeydew; */
-    /* float: left; */
-    width: 90%;
-    /* aspect-ratio: 3/4; */
+    align-items: center;
 }
 
-.signin-left,.signin-right{
-    display: inline-block;
-    padding-left: 1vw;
-    padding-right: 1vw;
+#but1,#but2{
     margin: auto;
-    color: white;
-}
-
-.signin-window a{
-    text-decoration: underline;
-    color: blue;
-    cursor: pointer;
-}
-
-.signin-items{
-    display: flex;
-    flex-wrap: wrap;
-    overflow: auto;
-    margin: 1vh auto;
-    justify-content: center;
-    /* padding: 0.5em; */
-}
-
-.signin-items ul{
-    display: block;
-}
-
-.signin-items li{
-    list-style: disc;
-    display: block;
-}
-
-#email,#password{
-    /* border-radius: 1.2em; */
-    border: 1px solid;
     padding: 1em;
-    width: 20em;
+    /* width: 10em; */
+    width: 50%;
     outline: none;
-    margin: auto;
-}
-
-#signin{
-    padding: 1em;
     border-radius: 0.2em;
-    outline: none;
-    width: 10em;
-    background-color: #e9163f;
-    cursor: pointer;
-    margin: auto;
+    background-color: #e9163f ;
     color: white;
 }
-
-
 
 .logo-2{
     margin: auto;
-    width: 10em;
+    width: 5em;
 }
+
+
 .logo{
     margin: auto;
     width: 4.5em;
@@ -192,21 +182,6 @@ a{
     padding: 0em;
 }
 
-.signin{
-    margin: auto;
-    /* background-color: #dbca69; */
-    outline: none;
-    border: none;
-    padding: 1em;
-    border-bottom:rgb(123, 118, 118);
-}
-
-.signin-items a{
-    text-decoration: none;
-    color: black;
-}
-
-
 .footer{
     display: flex;
     margin-top: 90px;
@@ -214,20 +189,20 @@ a{
     margin-right: auto;
     width: 100%;
     height: 150px;
+    color: black;
+    /* background-color: darkkhaki; */
     /* background-color: cadetblue; */
-    background-color: #5ce1e6;
+    background-color:#5ce1e6;
 }
 .foot-items{
     margin: 20px auto;
     width: 400px;
-    color: black;
 }
 .foot-items h2{
     color:black;
     text-align: left;
     border-bottom: 1px solid;
     padding: 2px;
-    color: black;
 }
 .foot-items ul{
     display: block;
@@ -238,7 +213,8 @@ a{
 }
 }
 
-@media screen and (max-width:1244px){
+@media screen and (max-width: 1244px){
+
     .navbar{
         display: none;
         align-items: center;
@@ -258,9 +234,9 @@ a{
     }
     .right-nav{
         display: flex;
-        overflow: auto;
         order: 2;
         width: 60%;
+        overflow: auto;
     }
     .nav-item{
         display: flex;
@@ -329,19 +305,18 @@ a{
         margin: 3.5px;
     }
     
-    
     .search-item:hover{
         background-color: white;
     }
     
     .search{
         display: flex;
-        overflow:auto;
         width: 25em;
         border: 1px solid black;
         padding: 0.2em;
         margin-left: 2em;
         align-items: center;
+        overflow: auto;
     }
     
     #search-bar{
@@ -361,111 +336,14 @@ a{
         cursor: pointer;
     }
     
-    
-    
-    .signin-window{
-        display: flex;
-        flex-wrap: wrap;
-        overflow: auto;
-        flex-direction: row;
-        justify-content: center;
-        margin-top: 15vmin;
-        margin-left: auto;
-        margin-right: auto;
-        /* background-color: #dbca69; */
-        /* box-shadow: 0 0 1em black; */
-        /* border-radius: 7em; */
-        /* border-color: honeydew; */
-        /* float: left; */
-        width: 90%;
-        /* aspect-ratio: 3/4; */
-    }
-
-    .signin-left{
-        order: 2;
-    }
-    .signin-right{
-        order: 1;
-    }
-    
-    .signin-left,.signin-right{
-        display: inline-block;
-        padding-left: 1vw;
-        padding-right: 1vw;
-        margin: auto;
-    }
-    
-    .signin-window a{
-        text-decoration: underline;
-        color: blue;
-        cursor: pointer;
-    }
-    
-    .signin-items{
-        display: flex;
-        flex-wrap: wrap;
-        overflow: auto;
-        margin: 1vh auto;
-        justify-content: center;
-        /* padding: 0.5em; */
-    }
-    
-    .signin-items ul{
-        display: block;
-    }
-    
-    .signin-items li{
-        list-style: disc;
-        display: block;
-    }
-    
-    #email,#password{
-        /* border-radius: 1.2em; */
-        border: 1px solid;
-        padding: 1em;
-        width: 15em;
-        outline: none;
-        margin: auto;
-    }
-    
-    #signin{
-        padding: 1em;
-        border-radius: 0.2em;
-        outline: none;
-        background-color: aquamarine;
-        cursor: pointer;
-        margin: auto;
-    }
-    
-    
-    
-    .logo-2{
-        margin: auto;
-        width: 12em;
-    }
-    
-    .signin{
-        margin: auto;
-        /* background-color: #dbca69; */
-        outline: none;
-        border: none;
-        padding: 1em;
-        border-bottom:rgb(123, 118, 118);
-    }
-    
-    .signin-items a{
-        text-decoration: none;
-        color: black;
-    }
-    
-    
     .footer{
         display: flex;
         margin-top: 90px;
         margin-left: auto;
         margin-right: auto;
         width: 100%;
-        height: 200px;
+        height: 600px;
+        /* background-color: darkkhaki; */
         /* background-color: cadetblue; */
         background-color: #99ccff;
     }
@@ -485,5 +363,6 @@ a{
     .foot-items li{
         text-align: left;
         margin: 5px 0px;
-    }
-    }
+    } 
+
+}

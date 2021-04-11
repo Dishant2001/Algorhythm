@@ -1,9 +1,24 @@
+<?php
+session_start();
+$logged=false;
+if(isset($_SESSION['User'])){
+  $logged=true;
+  if($_SESSION['id']=='startup')
+    header('Location:students.php');
+  else if($_SESSION['id']=='student')
+    header('Location:startups.php');
+  else if($_SESSION['id']=='mentor')
+    header('Location:mentors.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Care</title>
+    <title>The Consortium Network</title>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -32,8 +47,8 @@
     <header>
         <nav class="navbar">
         <div class="left-nav">
-          <div class="nav-item">
-              <a href="index.php"><img src="" alt="Logo"></a>
+          <div class="nav-item logo-cont">
+              <a href="index.php"><img class="logo" src="assets/logo.png" alt="Logo"></a>
           </div>
           <div class="nav-item search-item">
             <div class="search">
@@ -48,8 +63,24 @@
           <div class="nav-item"><a href="index.php">Home</a></div>
           <div class="nav-item"><a href="#">Features</a></div>
           <div class="nav-item"><a href="#">How it works?</a></div>
+            <?php
+            if($logged==TRUE)
+            {
+            ?>
+          <div class="nav-item">
+            <a href="account.php">My Account</a>
+          </div>
+          <div class="nav-item">
+            <a href="logout.php">Logout</a>
+          </div>
+          <?php 
+          }
+          else
+          {
+          ?>
           <div class="nav-item"><a href="login.php">Login</a></div>
           <div class="nav-item"><a href="signup.php">Sign Up</a></div>
+          <?php }?>
         </div>
         </nav>
         <nav class="navbar2">
@@ -85,14 +116,39 @@
         </div>
         </nav>
     </header>
+    <div class="logo3">
+        <a href="index.php"><img src="assets/logo.png" alt="Logo"></a>
+    </div>
+    <div class="image">
+        <img src="assets/startup.jpeg" alt="">
+    </div>
+    <div class="body1"><p>Recent studies show that more than 20% of startups fail in their early stages.
+      A major reason for this is lack of knowledge about the market and lack of mentorship.
+      We at The Consortium Network have tried to solve this problem and provide you with an environment to engage with learned mentors and passionate students who wish to learn and work with startups 
+    </p></div>
+    <div class="features">
+        <h1>Features</h1>
+        <div class="f1" style="margin-bottom:5em;">
+            <div class="column">
+            <h3>Tracks startups</h3>
+            <p>Keeps track on startups </p>
+            </div>
+            <div class="column">
+            <h3>Networking with some like minded people</h3>
+            <p>Different startups can interact with like minded people. </p>
+            </div>
+            <div class="column">
+            <h3>Mentoring of startups</h3>
+            <p>Our website provides mentoring to enthusiastic students and potential startups</p>
+            </div>
+        </div>
+    </div>
         <footer>
-            <div class="footer">
+            <div class="footer" style="height:80px;margin-top:5em;">
               <div class="foot-items">
                 <h2>Customer Care</h2>
-                <ul>
+                <ul style="list-style:none">
                   <li><a href="contact.php">Contact Us</a></li>
-                  <li><a href="#">Shipping</a></li>
-                  <li><a href="#">Policies</a></li>
                 </ul>
               </div>
               <div class="foot-items">

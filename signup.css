@@ -4,6 +4,7 @@
     /* font-family: 'Ubuntu Mono', monospace; */
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
+    font-weight: bold;
 }
 
 h1{
@@ -14,13 +15,17 @@ h1{
 header{
     position: sticky;
     top: 0;
-    border-bottom:2px solid #ccc;
+    
     background-color: white;
+}
+body{
+    background-color: black;
 }
 @media screen and (min-width:1244px){
 .navbar{
     display: flex;
     align-items: center;
+    background-color: #5ce1e6;
 }
 .navbar2{
     display: none;
@@ -29,12 +34,14 @@ header{
 .left-nav{
     display: flex;
     order: 1;
-    width: 60%;
+    width: 59%;
+    background-color: #5ce1e6;
 }
 .right-nav{
     display: flex;
     order: 2;
-    width: 40%;
+    background-color: #5ce1e6;
+    width: 41%;
 }
 
 .nav-item{
@@ -44,22 +51,16 @@ header{
     height: 0.6em;
     /* margin: auto; */
     align-items: center;
+    background-color: #5ce1e6;
+    color: black;
 }
 
 .nav-item a{
     text-align: center;
     margin: auto;
+    color: black;
 }
 
-.nav-item a:hover{
-    background-color: darksalmon;
-    cursor: pointer;
-}
-
-.nav-item:hover{
-    background-color: darksalmon;
-    cursor: pointer;
-}
 
 a{
     text-decoration: none;
@@ -67,17 +68,16 @@ a{
 }
 
 
-.search-item:hover{
-    background-color: white;
-}
 
 .search{
     display: flex;
     width: 25em;
-    border: 1px solid black;
+    border: 1px solid #5ce1e6;
     padding: 0.2em;
     margin-left: 2em;
     align-items: center;
+    background-color: white;
+    
 }
 
 #search-bar{
@@ -86,6 +86,8 @@ a{
     outline: none;
     padding: 0.5em;
     /* margin: auto; */
+    background-color: white;
+    color: black;
 }
 
 
@@ -97,25 +99,57 @@ a{
     cursor: pointer;
 }
 
+.buttons{
+    margin-top: 12em;
+    margin-bottom: 7em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
-#signup{
+#but1,#but2,#but3{
+    margin: auto;
     padding: 1em;
+    /* width: 10em; */
+    width: 33.33%;
+    outline: none;
+    border-radius: 0.2em;
+    background-color: #e9163f ;
+    color: white;
+}
+
+
+#signup1,#signup2,#signup3{
+    display: none;
+    text-align: center;
+    align-items:center;
+    padding: 1em;
+    width: 10em;
     border-radius: 0.2em;
     outline: none;
-    background-color: aquamarine;
+    background-color: #e9163f;
+    color: white;
     cursor: pointer;
     margin: auto;
 }
 
 
+
 .logo-2{
     margin: auto;
-    width: 12em;
+    width: 10em;
+}
+.logo{
+    margin: auto;
+    width: 4.5em;
+}
+.logo-cont{
+    padding: 0em;
 }
 
 
-.signup-window,.info-cont{
-    display: flex;
+.startup-window,.mentor-window,.student-window,.info-cont{
+    display: none;
     flex-wrap: wrap;
     overflow: auto;
     flex-direction: row;
@@ -157,7 +191,7 @@ a{
     /* padding: 0.5em; */
 }
 
-#first-name,#last-name{
+#startup-name,#founder-name,#fname,#lname{
     /* border-radius: 1.2em; */
     border: 1px solid;
     padding: 1em;
@@ -166,14 +200,38 @@ a{
     margin: auto;
 }
 
+/* .hide{
+    
+} */
 
-#signup-email,#signup-password,#phone,#s_address,#b_address,#state,#b_state,#b_district,#b_pincode,#district,#pincode,#country{
+
+#email,#signup-password,#phone,#s_address,#state,#district,#pincode,#country,#startup-logo,#desc,#tag,#link,#bdate,#mentor-pic,#gender,#education,#student-pic,#bio,#resume{
     /* border-radius: 1.2em; */
     border: 1px solid;
     padding: 1em;
     width: 20em;
     outline: none;
     margin: auto;
+    background-color: white;
+}
+#resume{
+    padding: 0.7em;
+    width: 20.5em;
+}
+#gender{
+    width: 22.2em;
+}
+#t1,#t2,#t3,#t4,#t5,#t6,#t7,#t8,#t9,#t10,#t11,#t12{
+    font-size: 1em;
+    color: white;
+    padding: 0.2em;
+}
+.tags{
+    flex-direction: column;
+}
+.tag-items{
+    display: block;
+    padding: 0.5em;
 }
 
 #confirm-password{
@@ -184,6 +242,7 @@ a{
     width: 20em;
     border: 1px solid;
     justify-content: left;
+    background-color: white;
     /* outline: none; */
     /* margin: ; */
 }
@@ -212,19 +271,22 @@ a{
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    height: 200px;
+    height: 150px;
     /* background-color: cadetblue; */
-    background-color: #99ccff;
+    background-color: #5ce1e6;
+    color: black;
 }
 .foot-items{
     margin: 20px auto;
     width: 400px;
+    color: black;
 }
 .foot-items h2{
     color:black;
     text-align: left;
     border-bottom: 1px solid;
     padding: 2px;
+    color: black;
 }
 .foot-items ul{
     display: block;

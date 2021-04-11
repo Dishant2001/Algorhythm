@@ -3,7 +3,26 @@ session_start();
 $logged=false;
 if(isset($_SESSION['User'])){
   $logged=true;
+
+
+$servername = "localhost:3308";
+$username = "root";
+$password = "";
+$dbname = "algorhythm";
+
+// Create connection
+$con = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($con->connect_error) {
+  die("Connection failed: " . $con->connect_error);
 }
+else{
+$query="SELECT * FROM `startup_details` WHERE `email_id`=(SELECT `startup_email_id` FROM `mentor_startup`)";
+$result=$con->query($query);
+}
+}
+else
+header('Location:login.php');
 
 ?>
 
@@ -12,8 +31,7 @@ if(isset($_SESSION['User'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <!-- <link rel="stylesheet" href="about.css"> -->
+    <title>Start-Ups</title>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -21,9 +39,12 @@ if(isset($_SESSION['User'])){
     <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Kaushan+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" ></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></link>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"></script>
     <style>
       <?php
-       include 'about.css'
+       include 'startups.css'
       ?>
     </style>
 </head>
@@ -111,44 +132,81 @@ if(isset($_SESSION['User'])){
         </div>
         </nav>
     </header>
-    <div class="about-section">
-      <h1>About Us</h1>
-      <p>As a team, we pride ourselves on our strong work ethic and quick turnaround.
-         We believe in craftsmanship, attention to detail, and that sweet spot between concept and execution.
-         Our talented team craft the best code and implement amazing designs.
-         We are well confident for what we do. We strive together unitedly to make our 
-         project work succesfully.</p>
-    </div>
-    <h1>Our Team</h1>
-    <div class="team-info">
-    <div class="member">
-        <img class="pic" src="assets/ritika.jpeg" alt="Ritika">
-        <h2>Ritika</h2>
-        <!-- <p>Some text that describes her.</p> -->
-        <p>ritika@example.com</p>
+    <!-- <div class="main-box">
+      <?php/*
+          if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+              $id= $row["s_id"];;
+              $name= $row["sname"] ;
+              $founder= $row["founder"];
+              $desc= $row["description"];
+              $logo= $row["logo"];
+              $tag= $row["domain_tags"];
+              $email=$row["email_id"];
+              $phone=$row["mobile_no"];
+              $state=$row["state"];
+              $district=$row["district"];
+              $pincode=$row["pincode"];
+              $link= $row["linkedin_url"];*/
+              ?>
+              <div class="info-cont">
+                <div class="info-left">
+                    <img src="<?php $logo?>" alt="Unavailable">
+                </div>
+                <div class="info-right">
+                    <div class="info-right-item"><?php echo $name?></div>
+                    <div class="info-right-item"><?php echo "Founder: ".$founder?></div>
+                    <div class="info-right-item"><?php echo $desc?></div>
+                    <div class="info-right-item"><?php echo $email?></div>
+                    <div class="info-right-item"><?php echo $phone?></div>
+                    <div class="info-right-item"><?php echo $state?></div>
+                    <div class="info-right-item"><?php echo $district?></div>
+                    <div class="info-right-item"><?php echo $pincode?></div>
+                    <div class="info-right-item"><?php echo "LinkedIn: ".$link?></div>
+                    <div class="info-right-item">
+                      <form action="startup.php?<?php $name ?>" method="get"> <input id="view" type="submit" value="View"></form>
+                      <form action="apply.php" method="post"> <input id="apply" type="submit" value="Apply"></form>
+                    </div>
+                </div>
+              </div>
+              <?php/*
+
+            }
+          }*/
+          ?>
+    </div> -->
+    <div class="row justify-content-center" style="margin-top: 5em;">
+                <table class="table" style="width:80%;">
+                    <thead style="color:white;font-weight:bolder;">
+                        <tr>
+                            <th>Name</th>
+                            <th>Founder</th>
+                            <th>Location</th>
+                            <th colspan="2">Action</th>
+                        </tr>
+                    </thead>
+                
+            <?php
+            if($result&& $result->num_rows>0)
+                while($row=$result->fetch_assoc()): ?>
+                    <tr>
+                        <td style="color:white;"><?php echo $row['sname']; ?></td>
+                        <td style="color:white;"><?php echo $row['founder']; ?></td>
+                        <td style="color:white;"><?php echo $row['state']; ?></td>
+                        <<td style="color:white;"><a href="view.php?edit=<?php echo $row['email_id']; ?>"
+                                class="btn btn-info">View</a></td>
+                    
+                            <!-- <a href="process.php?delete=<?php echo $row['email_id']; ?>"
+                                class="btn btn-danger">Delete</a> -->
+                    </tr>
+                <?php endwhile; ?>
+                </table>
       </div>
-      <div class="member">
-        <img class="pic" src="assets/tuba.jpeg" alt="Tuba">
-        <h2>Tuba</h2>
-        <!-- <p>Some text that describes her.</p> -->
-        <p>tubamomin9060@gmail.com</p>
-      </div>
-      <div class="member">
-        <img class="pic" src="assets/parthimg.jpeg" alt="Parth">
-        <h2>Parth</h2>
-        <!-- <p>Some text that describes him.</p> -->
-        <p>parth@example.com</p>
-      </div>
-      <div class="member">
-        <img class="pic" src="assets/dishant.jpeg" alt="Dishant">
-        <h2>Dishant</h2>
-        <!-- <p>Some text that describes him.</p> -->
-        <p>dishant.rathee@gmail.com</p>
-      </div>
-      
-    </div>
-    <footer>
-            <div class="footer" style="height:80px">
+
+
+      <footer>
+            <div class="footer" style="height:100px;margin-top:22.5em;">
               <div class="foot-items">
                 <h2>Customer Care</h2>
                 <ul style="list-style:none">

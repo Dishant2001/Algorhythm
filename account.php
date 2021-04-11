@@ -1,9 +1,22 @@
+<?php
+session_start();
+$logged=false;
+if(isset($_SESSION['User'])){
+  $logged=true;
+}
+else
+  header('Location:login.php')
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Care</title>
+    <title>My Account</title>
     <link rel="stylesheet" href="account.css">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -33,8 +46,8 @@
     <header>
         <nav class="navbar">
         <div class="left-nav">
-          <div class="nav-item">
-              <a href="index.php"><img src="" alt="Logo"></a>
+          <div class="nav-item logo-cont">
+              <a href="index.php"><img class="logo" src="assets/logo.png" alt="Logo"></a>
           </div>
           <div class="nav-item search-item">
             <div class="search">
@@ -49,8 +62,24 @@
           <div class="nav-item"><a href="index.php">Home</a></div>
           <div class="nav-item"><a href="#">Features</a></div>
           <div class="nav-item"><a href="#">How it works?</a></div>
+            <?php
+            if($logged==TRUE)
+            {
+            ?>
+          <div class="nav-item">
+            <a href="account.php">My Account</a>
+          </div>
+          <div class="nav-item">
+            <a href="logout.php">Logout</a>
+          </div>
+          <?php 
+          }
+          else
+          {
+          ?>
           <div class="nav-item"><a href="login.php">Login</a></div>
           <div class="nav-item"><a href="signup.php">Sign Up</a></div>
+          <?php }?>
         </div>
         </nav>
         <nav class="navbar2">
@@ -92,7 +121,7 @@
       </div>
       <p id="alert"></p>
       <form action="account.php" method="post">
-      <div class="info-cont">
+      <div class="info-cont" style="display:hidden">
         <div class="left-info-cont">
           <div class="info-box">
             <input type="text" id="first-name" name='first-name' value="" placeholder="First Name" required>
@@ -151,14 +180,12 @@
         <input id="save-button" type="submit" value="Update">
       </div>
     </form>
-        <footer>
-            <div class="footer">
+    <footer>
+            <div class="footer" style="height:80px">
               <div class="foot-items">
                 <h2>Customer Care</h2>
-                <ul>
+                <ul style="list-style:none">
                   <li><a href="contact.php">Contact Us</a></li>
-                  <li><a href="#">Shipping</a></li>
-                  <li><a href="#">Policies</a></li>
                 </ul>
               </div>
               <div class="foot-items">
